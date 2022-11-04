@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.HomeFragment"
-        android:label="fragment_home"
+        android:label="@string/home"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
@@ -17,10 +17,15 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.DetailFragment"
-        android:label="fragment_detail"
+        android:label="@string/detail"
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="characterDto"
             app:argType="ar.edu.ort.tp3parcialrickandmorty.data.CharacterDto" />
     </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.FavoritesFragment"
+        android:label="@string/favorites"
+        tools:layout="@layout/fragment_favorites" />
 </navigation>

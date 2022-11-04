@@ -5,4 +5,9 @@
     <string name="specie">Especie:</string>
     <string name="origin">Origen:</string>
     <string name="add">Agregar</string>
+    <string name="home">Home</string>
+    <string name="favorites">Favoritos</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="detail">Detalles</string>
 </resources>
