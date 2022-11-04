@@ -41,7 +41,7 @@ class DetailFragment : Fragment() {
             .into(binding.ivDetail)
 
         binding.favButton.setOnClickListener{
-            //Aca deberian agregar a favoritos
+            //Aca deberian agregar a favoritos pasando el character que trajimos mas arriba (val character)
         }
 
 
