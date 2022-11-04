@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.ort.tp3parcialrickandmorty.adapters.HomeRecyclerAdapter
@@ -22,9 +23,6 @@ class HomeFragment : Fragment() {
     private lateinit var homeRecyclerAdapter: HomeRecyclerAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,6 +33,7 @@ class HomeFragment : Fragment() {
 
         initHomeRecyclerView()
         getCharacters()
+        setSearchView()
 
         return binding.root
     }
@@ -44,6 +43,42 @@ class HomeFragment : Fragment() {
         binding.homeRv.layoutManager = gridLayoutManager
         homeRecyclerAdapter = HomeRecyclerAdapter()
         binding.homeRv.adapter = homeRecyclerAdapter
+    }
+
+    private fun setSearchView() {
+        binding.searchviewHome.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchCharacter(query!!)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                searchCharacter(newText!!)
+                return false
+            }
+
+        })
+    }
+
+    private fun searchCharacter(query: String){
+        val api = RickAndMortyService.create()
+        val call = api.searchCharacter(query)
+        call.enqueue(object : Callback<CharacterResponse>{
+            override fun onResponse(
+                call: Call<CharacterResponse>,
+                response: Response<CharacterResponse>
+            ) {
+                if (response.isSuccessful){
+                    homeRecyclerAdapter.setList(response.body()!!.results)
+                }
+            }
+
+            override fun onFailure(call: Call<CharacterResponse>, t: Throwable) {
+                Snackbar.make(requireView(), "Character not found", Snackbar.LENGTH_LONG).show()
+                Log.d("Failed to load characters", t.message.toString())
+            }
+
+        })
     }
 
     private fun getCharacters() {
@@ -60,8 +95,8 @@ class HomeFragment : Fragment() {
             }
 
             override fun onFailure(call: Call<CharacterResponse>, t: Throwable) {
-                Snackbar.make(requireView(), "Ups! Algo salió mal", Snackbar.LENGTH_LONG).show()
-                Log.d("Error cargando personajes", t.message.toString())
+                Snackbar.make(requireView(), "Ups! Something went wrong", Snackbar.LENGTH_LONG).show()
+                Log.d("Failed to load characters", t.message.toString())
             }
 
         })
