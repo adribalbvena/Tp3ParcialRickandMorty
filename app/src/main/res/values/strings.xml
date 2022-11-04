@@ -2,4 +2,7 @@
     <string name="app_name">Tp3 Parcial Rick and Morty</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="specie">Especie:</string>
+    <string name="origin">Origen:</string>
+    <string name="add">Agregar</string>
 </resources>
