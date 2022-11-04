@@ -7,13 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".fragments.HomeFragment" >
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/homeRv"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchviewHome"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_height="?attr/actionBarSize"
+        app:queryHint="Search for a character"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/homeRv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchviewHome" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
