@@ -7,10 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import ar.edu.ort.tp3parcialrickandmorty.listeners.OnCharacterClickedListener
 import androidx.recyclerview.widget.RecyclerView
 import ar.edu.ort.tp3parcialrickandmorty.adapters.HomeRecyclerAdapter
 import ar.edu.ort.tp3parcialrickandmorty.api.RickAndMortyService
+import ar.edu.ort.tp3parcialrickandmorty.data.Character
+import ar.edu.ort.tp3parcialrickandmorty.data.CharacterDto
 import ar.edu.ort.tp3parcialrickandmorty.data.CharacterResponse
 import ar.edu.ort.tp3parcialrickandmorty.databinding.FragmentHomeBinding
 import com.google.android.material.snackbar.Snackbar
@@ -18,7 +22,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), OnCharacterClickedListener {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var homeRecyclerAdapter: HomeRecyclerAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
@@ -41,9 +45,11 @@ class HomeFragment : Fragment() {
     fun initHomeRecyclerView() {
         gridLayoutManager = GridLayoutManager(requireContext(), 2)
         binding.homeRv.layoutManager = gridLayoutManager
-        homeRecyclerAdapter = HomeRecyclerAdapter()
+        homeRecyclerAdapter = HomeRecyclerAdapter(this)
         binding.homeRv.adapter = homeRecyclerAdapter
     }
+
+
 
     private fun setSearchView() {
         binding.searchviewHome.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
@@ -100,6 +106,13 @@ class HomeFragment : Fragment() {
             }
 
         })
+    }
+
+    override fun onCharacterSelected(character: Character) {
+        val characterDto = CharacterDto(character.id,character.image, character.name, character.origin.name, character.species, character.status)
+
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(characterDto)
+        findNavController().navigate(action)
     }
 
 }

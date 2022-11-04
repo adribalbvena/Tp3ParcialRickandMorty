@@ -6,8 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.data.Character
 import ar.edu.ort.tp3parcialrickandmorty.holders.HomeViewHolder
+import ar.edu.ort.tp3parcialrickandmorty.listeners.OnCharacterClickedListener
 
-class HomeRecyclerAdapter() : RecyclerView.Adapter<HomeViewHolder>() {
+class HomeRecyclerAdapter(private val onCharacterClickedListener: OnCharacterClickedListener) : RecyclerView.Adapter<HomeViewHolder>() {
     var characterList : List<Character> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
@@ -18,6 +19,11 @@ class HomeRecyclerAdapter() : RecyclerView.Adapter<HomeViewHolder>() {
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
         val character = characterList[position]
         holder.bind(character)
+
+        //Ver detalle
+        holder.itemView.setOnClickListener{
+            onCharacterClickedListener.onCharacterSelected(character)
+        }
     }
 
     override fun getItemCount(): Int = characterList.size
