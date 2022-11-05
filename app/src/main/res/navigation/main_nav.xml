@@ -28,4 +28,9 @@
         android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.FavoritesFragment"
         android:label="@string/favorites"
         tools:layout="@layout/fragment_favorites" />
+    <fragment
+        android:id="@+id/logoutFragment"
+        android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.LogoutFragment"
+        android:label="@string/logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

@@ -13,5 +13,6 @@
         android:title="@string/settings" />
 
     <item
+        android:id="@+id/logoutFragment"
         android:title="@string/logout" />
 </menu>

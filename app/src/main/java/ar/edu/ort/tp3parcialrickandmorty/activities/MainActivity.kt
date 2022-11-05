@@ -1,7 +1,9 @@
 package ar.edu.ort.tp3parcialrickandmorty.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
@@ -9,6 +11,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.databinding.ActivityMainBinding
+import ar.edu.ort.tp3parcialrickandmorty.sessionmanager.SessionManager
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
