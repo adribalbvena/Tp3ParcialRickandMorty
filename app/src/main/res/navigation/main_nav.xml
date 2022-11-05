@@ -37,4 +37,8 @@
         android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.LogoutFragment"
         android:label="@string/logout"
         tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

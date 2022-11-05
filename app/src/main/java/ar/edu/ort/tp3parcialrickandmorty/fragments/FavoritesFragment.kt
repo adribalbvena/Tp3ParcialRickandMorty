@@ -1,12 +1,14 @@
 package ar.edu.ort.tp3parcialrickandmorty.fragments
 
 import android.os.Bundle
+import android.se.omapi.Session
 import android.text.TextUtils
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import ar.edu.ort.tp3parcialrickandmorty.R
@@ -31,6 +33,7 @@ class FavoritesFragment : Fragment(), OnCharacterClickedListener {
     private lateinit var binding: FragmentFavoritesBinding
     private lateinit var favouritesRecyclerAdapter: FavouritesRecyclerAdapter
     private lateinit var gridLayoutManager: GridLayoutManager
+    private lateinit var sessionManager: SessionManager
 
 
     override fun onCreateView(
@@ -39,7 +42,8 @@ class FavoritesFragment : Fragment(), OnCharacterClickedListener {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentFavoritesBinding.inflate(inflater, container, false)
-
+        sessionManager = SessionManager(this.requireActivity())
+        binding.textViewFavoritesGreeting.text = "Hola ${sessionManager.fetchUserName()}, estos son tus personajes favoritos"
         initFavouritesRecyclerView()
         getFavourites()
 
@@ -54,7 +58,7 @@ class FavoritesFragment : Fragment(), OnCharacterClickedListener {
     }
 
     private fun getFavourites() {
-        val favouritesList = SessionManager(this.requireActivity()).getFavoritesIds()
+        val favouritesList = sessionManager.getFavoritesIds()
 
         if(favouritesList.isEmpty()){
             return

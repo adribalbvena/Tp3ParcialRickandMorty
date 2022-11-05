@@ -10,6 +10,7 @@
         android:title="@string/favorites" />
 
     <item
+        android:id="@+id/settingsFragment"
         android:title="@string/settings" />
 
     <item

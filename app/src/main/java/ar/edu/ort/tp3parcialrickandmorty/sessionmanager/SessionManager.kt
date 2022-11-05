@@ -16,6 +16,7 @@ class SessionManager(context: Context) {
     companion object {
         const val USER_NAME = "user_name"
         const val FAVORITES_IDS = "favorites_ids"
+        const val FAVORITES_CHECK = "favorites_enable"
     }
 
     /**
@@ -70,5 +71,19 @@ class SessionManager(context: Context) {
         }
 
         prefs.edit().putString(FAVORITES_IDS, gson.toJson(ids)).apply()
+    }
+
+    fun deleteFavourites(){
+        val editor = prefs.edit()
+        editor.remove(FAVORITES_IDS)
+        editor.apply()
+    }
+
+    fun getFavouritesCheck(): Boolean{
+        return prefs.getBoolean(FAVORITES_CHECK, true)
+    }
+
+    fun toggleFavouritesCheck(){
+        prefs.edit().putBoolean(FAVORITES_CHECK, !getFavouritesCheck()).apply()
     }
 }
