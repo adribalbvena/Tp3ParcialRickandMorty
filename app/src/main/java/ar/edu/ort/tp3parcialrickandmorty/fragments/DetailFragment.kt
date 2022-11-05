@@ -11,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.databinding.FragmentDetailBinding
+import ar.edu.ort.tp3parcialrickandmorty.sessionmanager.SessionManager
 import com.bumptech.glide.Glide
 
 
@@ -42,6 +43,7 @@ class DetailFragment : Fragment() {
 
         binding.favButton.setOnClickListener{
             //Aca deberian agregar a favoritos pasando el character que trajimos mas arriba (val character)
+            SessionManager(this.requireActivity()).toggleFavoriteId(character.id)
         }
 
 
