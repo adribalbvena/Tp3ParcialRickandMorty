@@ -57,24 +57,18 @@ class SessionManager(context: Context) {
         return ArrayList()
     }
 
-    /**
-     * Function to store a favorite id
-     */
-    fun addFavoriteId(id: Int) {
-        var ids = getFavoritesIds()
-        ids.add(id.toString())
-        prefs.edit().putString(FAVORITES_IDS, gson.toJson(ids)).apply()
-    }
 
     /**
-     * Function to remove a favorite id
+     * Function to toogle a favorite id
      */
-    fun removeFavoriteId(id: Int) {
+    fun toggleFavoriteId(id: Int) {
         var ids = getFavoritesIds()
-        if (ids.isEmpty()) {
-            return
+        if (ids.contains(id.toString())) {
+            ids.remove(id.toString())
+        } else {
+            ids.add(id.toString())
         }
-        ids.remove(id.toString())
+
         prefs.edit().putString(FAVORITES_IDS, gson.toJson(ids)).apply()
     }
 }
