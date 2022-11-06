@@ -8,6 +8,20 @@
     tools:context=".SettingsFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
+    <Switch
+        android:id="@+id/switch_settings_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:text="Permitir buscar personajes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline4"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline3"
+        app:layout_constraintTop_toBottomOf="@+id/switch_settings_favourites"
+        app:layout_constraintVertical_bias="0.112" />
+
     <Switch
         android:id="@+id/switch_settings_favourites"
         android:layout_width="0dp"

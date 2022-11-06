@@ -22,6 +22,8 @@ class SettingsFragment : Fragment() {
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
         binding.switchSettingsFavourites.isChecked = sessionManager.getFavouritesCheck()
         binding.switchSettingsFavourites.setOnClickListener{ sessionManager.toggleFavouritesCheck() }
+        binding.switchSettingsSearch.isChecked = sessionManager.getSearchCheck()
+        binding.switchSettingsSearch.setOnClickListener{ sessionManager.toggleSearchCheck() }
         return binding.root
     }
 }

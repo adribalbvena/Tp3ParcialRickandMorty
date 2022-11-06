@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.view.isGone
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.databinding.FragmentDetailBinding
@@ -46,6 +48,9 @@ class DetailFragment : Fragment() {
             SessionManager(this.requireActivity()).toggleFavoriteId(character.id)
         }
 
+        if( !SessionManager(this.requireActivity()).getFavouritesCheck()){
+            binding.favButton.visibility = View.GONE
+        }
 
         return binding.root
     }
