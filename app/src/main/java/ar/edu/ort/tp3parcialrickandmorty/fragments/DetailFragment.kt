@@ -19,6 +19,7 @@ import com.bumptech.glide.Glide
 
 class DetailFragment : Fragment() {
     private lateinit var binding: FragmentDetailBinding
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +28,7 @@ class DetailFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentDetailBinding.inflate(inflater, container, false)
         val character = DetailFragmentArgs.fromBundle(requireArguments()).characterDto
+        sessionManager = SessionManager(this.requireActivity())
 
         binding.tvDetailStatus.text= character.status
         binding.tvDetailName.text= character.name
@@ -45,14 +47,27 @@ class DetailFragment : Fragment() {
 
         binding.favButton.setOnClickListener{
             //Aca deberian agregar a favoritos pasando el character que trajimos mas arriba (val character)
-            SessionManager(this.requireActivity()).toggleFavoriteId(character.id)
+            sessionManager.toggleFavoriteId(character.id)
+            toggleButton(isInFavorites(character.id.toString()))
         }
+        toggleButton(isInFavorites(character.id.toString()))
 
-        if( !SessionManager(this.requireActivity()).getFavouritesCheck()){
+        if( !sessionManager.getFavouritesCheck()){
             binding.favButton.visibility = View.GONE
         }
-
         return binding.root
+    }
+
+    private fun isInFavorites(id:String):Boolean {
+         return sessionManager.getFavoritesIds().contains(id)
+    }
+
+    private fun toggleButton(isAdded: Boolean){
+        if(!isAdded) {
+            binding.favButton.setImageResource(android.R.drawable.ic_input_add)
+        } else {
+            binding.favButton.setImageResource(android.R.drawable.ic_menu_delete)
+        }
     }
 
     private fun setTextViewDrawableColor(textView: TextView, color: Int) {

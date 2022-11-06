@@ -43,10 +43,9 @@ class FavoritesFragment : Fragment(), OnCharacterClickedListener {
         // Inflate the layout for this fragment
         binding = FragmentFavoritesBinding.inflate(inflater, container, false)
         sessionManager = SessionManager(this.requireActivity())
-        binding.textViewFavoritesGreeting.text = "Hola ${sessionManager.fetchUserName()}, estos son tus personajes favoritos"
+        binding.textViewFavoritesGreeting.text = String.format(getString(R.string.greeting), sessionManager.fetchUserName())
         initFavouritesRecyclerView()
         getFavourites()
-
         return binding.root
     }
 
