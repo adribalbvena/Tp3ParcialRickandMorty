@@ -16,6 +16,8 @@ class SessionManager(context: Context) {
     companion object {
         const val USER_NAME = "user_name"
         const val FAVORITES_IDS = "favorites_ids"
+        const val FAVORITES_CHECK = "favorites_enable"
+        const val SEARCH_CHECK = "search_enable"
     }
 
     /**
@@ -24,15 +26,6 @@ class SessionManager(context: Context) {
     fun saveUserName(username: String) {
         val editor = prefs.edit()
         editor.putString(USER_NAME, username)
-        editor.apply()
-    }
-
-    /**
-     * Function to delete user name
-     */
-    fun deleteUserName() {
-        val editor = prefs.edit()
-        editor.remove(USER_NAME)
         editor.apply()
     }
 
@@ -70,5 +63,30 @@ class SessionManager(context: Context) {
         }
 
         prefs.edit().putString(FAVORITES_IDS, gson.toJson(ids)).apply()
+    }
+
+    fun getFavouritesCheck(): Boolean{
+        return prefs.getBoolean(FAVORITES_CHECK, true)
+    }
+
+    fun toggleFavouritesCheck(){
+        prefs.edit().putBoolean(FAVORITES_CHECK, !getFavouritesCheck()).apply()
+    }
+
+    fun getSearchCheck(): Boolean{
+        return prefs.getBoolean(SEARCH_CHECK, true)
+    }
+
+    fun toggleSearchCheck(){
+        prefs.edit().putBoolean(SEARCH_CHECK, !getSearchCheck()).apply()
+    }
+
+    fun deleteAll(){
+        val editor = prefs.edit()
+        editor.remove(FAVORITES_IDS)
+        editor.remove(USER_NAME)
+        editor.remove(SEARCH_CHECK)
+        editor.remove(FAVORITES_CHECK)
+        editor.apply()
     }
 }

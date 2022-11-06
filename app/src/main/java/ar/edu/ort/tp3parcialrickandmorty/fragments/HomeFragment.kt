@@ -17,6 +17,7 @@ import ar.edu.ort.tp3parcialrickandmorty.data.Character
 import ar.edu.ort.tp3parcialrickandmorty.data.CharacterDto
 import ar.edu.ort.tp3parcialrickandmorty.data.CharacterResponse
 import ar.edu.ort.tp3parcialrickandmorty.databinding.FragmentHomeBinding
+import ar.edu.ort.tp3parcialrickandmorty.sessionmanager.SessionManager
 import com.google.android.material.snackbar.Snackbar
 import retrofit2.Call
 import retrofit2.Callback
@@ -52,6 +53,9 @@ class HomeFragment : Fragment(), OnCharacterClickedListener {
 
 
     private fun setSearchView() {
+        if( !SessionManager(this.requireActivity()).getSearchCheck()){
+            binding.searchviewHome.visibility = View.GONE
+        }
         binding.searchviewHome.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 searchCharacter(query!!)

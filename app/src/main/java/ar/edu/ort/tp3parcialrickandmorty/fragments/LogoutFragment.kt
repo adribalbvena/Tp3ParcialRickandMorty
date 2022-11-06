@@ -23,7 +23,8 @@ class LogoutFragment : Fragment() {
 
     fun onLogOut(){
         var myactivity = this.requireActivity()
-        SessionManager(myactivity).deleteUserName()
+        var sessionManager = SessionManager(myactivity)
+        sessionManager.deleteAll()
         myactivity.startActivity(Intent(myactivity, LoginActivity::class.java))
         myactivity.finish()
     }
