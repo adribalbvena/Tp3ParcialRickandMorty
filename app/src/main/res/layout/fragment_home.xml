@@ -10,12 +10,13 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/searchviewHome"
         android:layout_width="match_parent"
-        android:layout_marginStart="8dp"
         android:layout_height="?attr/actionBarSize"
-        app:queryHint="Search for a character"
+        android:layout_marginStart="8dp"
+        android:tooltipText="Buscar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:queryHint="Buscar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/homeRv"

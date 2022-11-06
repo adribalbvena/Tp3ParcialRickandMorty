@@ -15,13 +15,6 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        var username = SessionManager(this).fetchUserName()
-
-        if (username != null && !TextUtils.isEmpty(username)) {
-            startMainActivity()
-        }
-
         binding.buttonLoginSignin.setOnClickListener { onLoginButtonClick() }
     }
 
