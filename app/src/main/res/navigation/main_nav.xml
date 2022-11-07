@@ -40,5 +40,5 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="ar.edu.ort.tp3parcialrickandmorty.fragments.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:label="@string/settings" />
 </navigation>

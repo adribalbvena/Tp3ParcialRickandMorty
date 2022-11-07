@@ -18,4 +18,5 @@
     <string name="rick_and_morty">Rick and Morty</string>
     <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <string name="greeting">"Hola %s, estos son tus personajes favoritos"</string>
+    <string name="nightMode">Night Mode</string>
 </resources>
