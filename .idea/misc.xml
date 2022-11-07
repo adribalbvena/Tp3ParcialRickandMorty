@@ -5,11 +5,12 @@
       <map>
         <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/activity_main.xml" value="0.5342592592592592" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.44349365234375004" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.30009002685546876" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.2578125" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3439888811674774" />
-        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.1578125" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_character.xml" value="0.38701751708984367" />
         <entry key="app/src/main/res/menu/menu_drawer.xml" value="0.6537034862007836" />
       </map>
