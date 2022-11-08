@@ -1,17 +1,13 @@
 package ar.edu.ort.tp3parcialrickandmorty.fragments
 
-import android.content.Context
-import android.content.res.ColorStateList
 import android.graphics.PorterDuff
 import android.graphics.PorterDuffColorFilter
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.data.CharacterDto
@@ -84,13 +80,5 @@ class DetailFragment : Fragment() {
                     )
             }
         }
-    }
-
-    private fun setDrawableColor(drawable: Drawable, color: Int) {
-        drawable.colorFilter =
-            PorterDuffColorFilter(
-                ContextCompat.getColor(this.requireContext(), color),
-                PorterDuff.Mode.SRC_IN
-            )
     }
 }
