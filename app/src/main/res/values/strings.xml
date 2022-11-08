@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">Tp3 Parcial Rick and Morty</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="specie">Especie:</string>
     <string name="origin">Origen:</string>
     <string name="add">Agregar</string>
@@ -10,13 +8,14 @@
     <string name="settings">Settings</string>
     <string name="logout">Logout</string>
     <string name="detail">Detalles</string>
-    <string name="permitir_modificar_favoritos">Permitir modificar favoritos</string>
-    <string name="permitir_buscar_personajes">Permitir buscar personajes</string>
-    <string name="usuario">Usuario</string>
-    <string name="contrase_a">Contraseña</string>
-    <string name="continuar">Continuar</string>
+    <string name="allow_favorites_modification">Permitir modificar favoritos</string>
+    <string name="allow_character_search">Permitir buscar personajes</string>
+    <string name="username_input_hint">Usuario</string>
+    <string name="password_input_hint">Contraseña</string>
+    <string name="login_button_label">Continuar</string>
     <string name="rick_and_morty">Rick and Morty</string>
-    <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
+    <string name="forgot_password">¿Olvidaste tu contraseña?</string>
     <string name="greeting">"Hola %s, estos son tus personajes favoritos"</string>
-    <string name="nightMode">Night Mode</string>
+    <string name="night_mode">Modo Nocturno</string>
+    <string name="error_message">Ups! Something went wrong</string>
 </resources>

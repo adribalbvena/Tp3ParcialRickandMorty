@@ -13,8 +13,8 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/main_nav"
-        app:defaultNavHost="true"/>
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_nav" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -22,6 +22,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:menu="@menu/menu_drawer"/>
-
+        app:menu="@menu/menu_drawer" />
+    
 </androidx.drawerlayout.widget.DrawerLayout>

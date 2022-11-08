@@ -8,7 +8,7 @@ import ar.edu.ort.tp3parcialrickandmorty.R
 import ar.edu.ort.tp3parcialrickandmorty.data.Character
 import com.bumptech.glide.Glide
 
-class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+class CharacterListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     private val name: TextView
     private val status: TextView
     private val image: ImageView

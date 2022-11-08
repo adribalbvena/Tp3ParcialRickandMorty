@@ -3,7 +3,6 @@ package ar.edu.ort.tp3parcialrickandmorty.data
 import android.os.Parcelable
 import android.os.Parcel
 
-
 data class CharacterDto(
     val id: Int,
     val image: String,
@@ -19,8 +18,7 @@ data class CharacterDto(
         parcel.readString().toString(),
         parcel.readString().toString(),
         parcel.readString().toString()
-    ) {
-    }
+    )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeInt(id)

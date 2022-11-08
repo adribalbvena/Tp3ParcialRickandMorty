@@ -5,8 +5,8 @@
     android:id="@+id/card_character"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:elevation="10dp"
     android:layout_margin="16dp"
+    android:elevation="10dp"
     app:cardCornerRadius="12dp"
     app:cardElevation="2dp">
 
@@ -27,25 +27,23 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@id/ivCharacter"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:text="Rick Sanchez"
             android:textSize="16sp"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ivCharacter"
+            tools:text="Rick Sanchez" />
 
         <TextView
             android:id="@+id/tvStatusCharacter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="4dp"
             app:layout_constraintTop_toBottomOf="@+id/tvNameCharacter"
             tools:text="Status: Alive" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>

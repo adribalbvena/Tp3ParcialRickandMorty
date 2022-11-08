@@ -3,8 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3165" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/drawable/favorite_button_add.xml" value="0.3155" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/drawable/ic_circle.xml" value="0.3165" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3165" />
         <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/activity_main.xml" value="0.5342592592592592" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/activity_splash.xml" value="0.2541156606162938" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/fragment_detail.xml" value="0.34754402224281744" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/fragment_favorites.xml" value="0.2573749465583583" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/fragment_home.xml" value="0.2541156606162938" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/fragment_logout.xml" value="0.2541156606162938" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/fragment_settings.xml" value="0.2541156606162938" />
+        <entry key="..\:/repos/ORT/Tp3ParcialRickandMorty/app/src/main/res/layout/item_character.xml" value="0.2541156606162938" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.44349365234375004" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.30009002685546876" />
