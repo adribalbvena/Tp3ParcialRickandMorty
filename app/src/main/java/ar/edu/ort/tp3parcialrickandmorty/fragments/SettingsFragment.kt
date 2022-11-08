@@ -23,20 +23,21 @@ class SettingsFragment : Fragment() {
         // Inflate the layout for this fragment
         sessionManager = SessionManager(this.requireActivity())
         binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        binding.switchSettingsFavourites.isChecked = sessionManager.getFavouritesCheck()
-        binding.switchSettingsFavourites.setOnClickListener{ sessionManager.toggleFavouritesCheck() }
-        binding.switchSettingsSearch.isChecked = sessionManager.getSearchCheck()
-        binding.switchSettingsSearch.setOnClickListener{ sessionManager.toggleSearchCheck() }
-
-
-        binding.switchSettingsNightMode.setOnCheckedChangeListener{ buttonView, isChecked ->
-            if(isChecked){
-                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
-            }
-        }
-
+        setSettingsSwitches()
         return binding.root
+    }
+
+    private fun setSettingsSwitches() {
+        binding.switchSettingsFavourites.isChecked = sessionManager.getFavouritesCheck()
+        binding.switchSettingsFavourites.setOnClickListener { sessionManager.toggleFavouritesCheck() }
+
+        binding.switchSettingsSearch.isChecked = sessionManager.getSearchCheck()
+        binding.switchSettingsSearch.setOnClickListener { sessionManager.toggleSearchCheck() }
+
+        binding.switchSettingsNightMode.isChecked = sessionManager.getNightModeCheck()
+        binding.switchSettingsNightMode.setOnCheckedChangeListener { _, isChecked ->
+            sessionManager.toggleNightModeCheck()
+            AppCompatDelegate.setDefaultNightMode(if (isChecked) MODE_NIGHT_YES else MODE_NIGHT_NO)
+        }
     }
 }

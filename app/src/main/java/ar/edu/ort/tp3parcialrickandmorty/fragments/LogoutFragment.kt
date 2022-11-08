@@ -21,11 +21,10 @@ class LogoutFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_logout, container, false)
     }
 
-    fun onLogOut(){
-        var myactivity = this.requireActivity()
-        var sessionManager = SessionManager(myactivity)
-        sessionManager.deleteAll()
-        myactivity.startActivity(Intent(myactivity, LoginActivity::class.java))
-        myactivity.finish()
+    private fun onLogOut() {
+        val currentActivity = this.requireActivity()
+        SessionManager(currentActivity).deleteAll()
+        currentActivity.startActivity(Intent(currentActivity, LoginActivity::class.java))
+        currentActivity.finish()
     }
 }

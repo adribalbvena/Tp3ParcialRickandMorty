@@ -20,11 +20,10 @@
         android:id="@+id/textView_favorites_greeting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_margin="20dp"
         android:gravity="center_horizontal"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_margin="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -13,11 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:minHeight="48dp"
-        android:text="@string/nightMode"
+        android:text="@string/night_mode"
         android:textSize="18sp"
-        app:switchPadding="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_settings_search" />
+        app:layout_constraintTop_toBottomOf="@+id/switch_settings_search"
+        app:switchPadding="50dp" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switch_settings_search"
@@ -25,23 +25,23 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
         android:minHeight="48dp"
-        android:text="@string/permitir_buscar_personajes"
+        android:text="@string/allow_character_search"
         android:textSize="18sp"
-        app:switchPadding="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switch_settings_favourites" />
+        app:layout_constraintTop_toBottomOf="@+id/switch_settings_favourites"
+        app:switchPadding="50dp" />
 
     <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/switch_settings_favourites"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="60dp"
         android:minHeight="48dp"
-        android:text="@string/permitir_modificar_favoritos"
+        android:text="@string/allow_favorites_modification"
         android:textSize="18sp"
-        app:switchPadding="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:switchPadding="50dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

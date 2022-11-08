@@ -18,75 +18,61 @@ class SessionManager(context: Context) {
         const val FAVORITES_IDS = "favorites_ids"
         const val FAVORITES_CHECK = "favorites_enable"
         const val SEARCH_CHECK = "search_enable"
+        const val NIGHT_MODE_CHECK = "night_mode_on"
+        const val EMPTY_FAVORITES = "[]"
     }
 
-    /**
-     * Function to save user name
-     */
     fun saveUserName(username: String) {
-        val editor = prefs.edit()
-        editor.putString(USER_NAME, username)
-        editor.apply()
+        prefs.edit().putString(USER_NAME, username).apply()
     }
 
-    /**
-     * Function to fetch user name
-     */
-    fun fetchUserName(): String? {
+    fun getUserName(): String? {
         return prefs.getString(USER_NAME, null)
     }
 
-    /**
-     * Function to get favorites ids
-     */
-    fun getFavoritesIds(): ArrayList<String> {
-        var ids = prefs.getString(FAVORITES_IDS, null)
-
-        if (ids != null) {
-            var type = object : TypeToken<java.util.ArrayList<String?>?>() {}.getType()
-            return gson.fromJson(ids, type)
-        }
-
-        return ArrayList()
+    fun getFavoritesIds(): ArrayList<Int> {
+        val ids = prefs.getString(FAVORITES_IDS, EMPTY_FAVORITES)
+        val type = object : TypeToken<java.util.ArrayList<Int?>?>() {}.type
+        return gson.fromJson(ids, type)
     }
 
-
-    /**
-     * Function to toogle a favorite id
-     */
     fun toggleFavoriteId(id: Int) {
-        var ids = getFavoritesIds()
-        if (ids.contains(id.toString())) {
-            ids.remove(id.toString())
-        } else {
-            ids.add(id.toString())
-        }
-
+        val ids = getFavoritesIds()
+        if (ids.contains(id)) ids.remove(id) else ids.add(id)
         prefs.edit().putString(FAVORITES_IDS, gson.toJson(ids)).apply()
     }
 
-    fun getFavouritesCheck(): Boolean{
+    fun getFavouritesCheck(): Boolean {
         return prefs.getBoolean(FAVORITES_CHECK, true)
     }
 
-    fun toggleFavouritesCheck(){
+    fun toggleFavouritesCheck() {
         prefs.edit().putBoolean(FAVORITES_CHECK, !getFavouritesCheck()).apply()
     }
 
-    fun getSearchCheck(): Boolean{
+    fun getSearchCheck(): Boolean {
         return prefs.getBoolean(SEARCH_CHECK, true)
     }
 
-    fun toggleSearchCheck(){
+    fun toggleSearchCheck() {
         prefs.edit().putBoolean(SEARCH_CHECK, !getSearchCheck()).apply()
     }
 
-    fun deleteAll(){
+    fun getNightModeCheck(): Boolean {
+        return prefs.getBoolean(NIGHT_MODE_CHECK, false)
+    }
+
+    fun toggleNightModeCheck() {
+        prefs.edit().putBoolean(NIGHT_MODE_CHECK, !getNightModeCheck()).apply()
+    }
+
+    fun deleteAll() {
         val editor = prefs.edit()
         editor.remove(FAVORITES_IDS)
         editor.remove(USER_NAME)
         editor.remove(SEARCH_CHECK)
         editor.remove(FAVORITES_CHECK)
+        editor.remove(NIGHT_MODE_CHECK)
         editor.apply()
     }
 }

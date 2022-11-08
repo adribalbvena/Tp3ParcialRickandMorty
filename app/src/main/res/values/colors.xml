@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="grey">#78909C</color>
 
     //Rick and Morty logo colors
     <color name="bluerm">#00b0c8</color>
@@ -18,5 +19,4 @@
     <color name="dead">#F43B3B</color>
     <color name="alive">#44FD78</color>
     <color name="unknow">#7A7979</color>
-
 </resources>
